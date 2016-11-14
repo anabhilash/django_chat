@@ -1,0 +1,26 @@
+{
+    "name": "Message_Board",
+    "description": "discussion never ends",
+    "repository": "https://github.com/jacobian/channels-example",
+    "keywords": ["django", "channels", "websockets"],
+    "scripts": {
+        "postdeploy": "python manage.py migrate"
+    },
+    "env": {
+        "SECRET_KEY": {
+            "description": "Django's SECRET_KEY setting",
+            "generator": "secret"
+        }
+    },
+    "addons": ["heroku-postgresql", "redislabs-redis"],
+    "formation": {
+        "web": {
+            "quantity": 1,
+          " size": "Free"
+        },
+        "worker": {
+            "quantity": 1,
+            "size": "Free"
+        }
+    }
+}

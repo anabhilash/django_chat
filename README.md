@@ -1,0 +1,1 @@
+project with django part of mission rnd 2016
