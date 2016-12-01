@@ -24,9 +24,7 @@ def ws_connect(message):
 
     log.debug('chat connect room=%s client=%s:%s', 
         room.label, message['client'][0], message['client'][1])
-    
-    # Need to be explicit about the channel layer so that testability works
-    # This may be a FIXME?
+
     Group('chat-'+label, channel_layer=message.channel_layer).add(message.reply_channel)
 
     message.channel_session['room'] = room.label
